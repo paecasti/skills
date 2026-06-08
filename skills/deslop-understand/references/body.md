@@ -1,0 +1,51 @@
+# Deslop Understand Body
+
+## What this produces
+
+A concise understanding dossier in `<flow-folder>/docs/` derived from user-provided material in `<flow-folder>/background/`.
+
+## Investigation process
+
+1. Use background material from current context when already available; otherwise read it from `background/`.
+2. If the background contains contradictions or conceptual inconsistencies, report them and stop before investigating further.
+3. Write concise understanding notes to:
+
+```txt
+<flow-folder>/docs/documentation.md
+```
+
+4. When explicit information is missing and an assumption is needed, record it immediately in:
+
+```txt
+<flow-folder>/docs/assumptions.md
+```
+
+5. After the investigation, create a short questionnaire only if important doubts remain:
+
+```txt
+<flow-folder>/docs/questions.md
+```
+
+6. Return a completion summary to the user that lists the documents created or updated.
+7. If `questions.md` was created, tell the user to answer the questionnaire before moving forward.
+8. Suggest running `$deslop-generate-acceptance-criteria` for the same flow folder after the documentation is ready and blocking questions are resolved.
+
+## Gotcha list
+
+**Scope:**
+- Do not infer the flow folder from the repository root when the user omits it.
+- Do not continue when background material is neither in context nor available in `background/`.
+- Do not read background files when their contents are already available in current context.
+- Do not read background material before the validation process passes.
+- Do not inspect implementation files before reading the background material.
+
+**Behavior:**
+- Do not propose, plan, implement, refactor, or select a solution.
+- Stop on contradictions in background material instead of reconciling them silently.
+- Update `assumptions.md` as assumptions appear during investigation, not only at the end.
+
+**Output:**
+- Keep `documentation.md` useful for a later proposal without repeating the same investigation.
+- Create `questions.md` only after finishing the investigation.
+- Always return a short summary of created or updated files before ending.
+- Point the user to `$deslop-generate-acceptance-criteria` as the next Deslop skill after understanding is complete.
