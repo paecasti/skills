@@ -45,9 +45,8 @@ Then <observable result>
 - Do not use the `background/` folder to create acceptance criteria.
 - Do not continue when documentation is neither in context nor available in `documentation.md`.
 - Do not read `documentation.md` before the validation process passes.
-- Do not read `documentation.md` or `questions.md` when their contents are already available in current context.
+- Do not read `documentation.md` when its contents are already available in current context.
 - Do not use `assumptions.md`; it is a trace document, not acceptance criteria input.
-- Treat unresolved items in `questions.md` as blockers unless the user explicitly chooses to continue.
 
 **Criteria:**
 - Do not write implementation tasks, UI copy, architecture decisions, or solution proposals as acceptance criteria.

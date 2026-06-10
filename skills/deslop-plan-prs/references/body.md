@@ -70,7 +70,6 @@ A sequential PR execution plan under `<flow-folder>/plan/` with `PLAN.md`, PR fo
 - Do not read proposal, documentation, or acceptance criteria files when their contents are already available in current context.
 - Do not read every proposal file when the selected proposal is already explicit.
 - Do not use the `background/` folder to create the plan.
-- Treat unresolved items in `questions.md` as blockers unless the user explicitly chooses to continue.
 
 **Output:**
 - Write real files under `<flow-folder>/plan/`; do not only answer in chat.

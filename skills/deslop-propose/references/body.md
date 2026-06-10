@@ -44,7 +44,7 @@ One decision-ready proposal at `<flow-folder>/proposals/proposal-<idea>.md` deri
 
 **Input:**
 - Do not use the `background/` folder to create the proposal.
-- Do not read `documentation.md`, `acceptance-criteria.md`, `questions.md`, or existing proposal files when their contents are already available in current context.
+- Do not read `documentation.md`, `acceptance-criteria.md`, or existing proposal files when their contents are already available in current context.
 - Use `acceptance-criteria.md` as decision input when it exists.
 - Treat user-provided proposal direction as binding unless it conflicts with documented requirements.
 

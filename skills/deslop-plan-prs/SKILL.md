@@ -35,12 +35,4 @@ description: Create a PR-by-PR execution plan from a completed Deslop proposal, 
 ```
 
 8. If acceptance criteria are not in context and `acceptance-criteria.md` is missing, tell the user to run `$deslop-generate-acceptance-criteria` first and stop.
-9. Read the questionnaire only when present and not already known from context:
-
-```txt
-<flow-folder>/docs/questions.md
-```
-
-10. If `questions.md` contains unresolved questions, warn the user that open questions remain and ask whether to continue anyway.
-11. If the user does not explicitly choose to continue, stop without creating the plan.
-12. If validation passes, read `references/body.md` and follow it.
+9. If validation passes, read `references/body.md` and follow it.

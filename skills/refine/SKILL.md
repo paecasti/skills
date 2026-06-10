@@ -12,6 +12,6 @@ description: Generate or process a local refinement.md for a primary document an
 3. Confirm the primary document exists.
 4. Confirm each supporting document exists before using it.
 5. Resolve the refinement file path as `refinement.md` in the same directory as the primary document.
-6. If the user says the refinement was answered, require the refinement file to exist and confirm the primary document is writable.
+6. If the user says the refinement was answered, completed, filled, ready to process, or asks to process without new questions, require the refinement file to exist and confirm the primary document is writable.
 7. If the user does not say the refinement was answered, confirm the primary document directory is writable.
 8. If validation passes, read `references/body.md` and follow it.

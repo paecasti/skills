@@ -20,15 +20,9 @@ A concise understanding dossier in `<flow-folder>/docs/` derived from user-provi
 <flow-folder>/docs/assumptions.md
 ```
 
-5. After the investigation, create a short questionnaire only if important doubts remain:
-
-```txt
-<flow-folder>/docs/questions.md
-```
-
-6. Return a completion summary to the user that lists the documents created or updated.
-7. If `questions.md` was created, tell the user to answer the questionnaire before moving forward.
-8. Suggest running `$deslop-generate-acceptance-criteria` for the same flow folder after the documentation is ready and blocking questions are resolved.
+5. Return a completion summary to the user that lists the documents created or updated.
+6. If the user wants to refine the documented understanding, suggest running `$refine` with `documentation.md`.
+7. Suggest running `$deslop-generate-acceptance-criteria` for the same flow folder after the documentation is ready.
 
 ## Gotcha list
 
@@ -43,9 +37,9 @@ A concise understanding dossier in `<flow-folder>/docs/` derived from user-provi
 - Do not propose, plan, implement, refactor, or select a solution.
 - Stop on contradictions in background material instead of reconciling them silently.
 - Update `assumptions.md` as assumptions appear during investigation, not only at the end.
+- Do not request clarification during understanding; use `$refine` only when the user explicitly wants optional refinement.
 
 **Output:**
 - Keep `documentation.md` useful for a later proposal without repeating the same investigation.
-- Create `questions.md` only after finishing the investigation.
 - Always return a short summary of created or updated files before ending.
 - Point the user to `$deslop-generate-acceptance-criteria` as the next Deslop skill after understanding is complete.

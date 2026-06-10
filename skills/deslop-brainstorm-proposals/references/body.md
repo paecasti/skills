@@ -52,7 +52,7 @@ A lightweight proposal brainstorm at `<flow-folder>/proposals/brainstorm-proposa
 - Do not use the `background/` folder to brainstorm proposals.
 - Do not continue when documentation is neither in context nor available in `documentation.md`.
 - Do not read `documentation.md` before the validation process passes.
-- Do not read `documentation.md`, `acceptance-criteria.md`, or `questions.md` when their contents are already available in current context.
+- Do not read `documentation.md` or `acceptance-criteria.md` when their contents are already available in current context.
 - Use `acceptance-criteria.md` as decision input when it exists.
 
 **Brainstorm:**
