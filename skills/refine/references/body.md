@@ -27,14 +27,18 @@ A `refinement.md` file next to the primary document, plus an iterative refinemen
    - `Data / integration`
    - `Implementation detail`
 5. Order questions by priority, then by category in the order listed above.
-6. Do not ask implementation-detail questions while unresolved business, scope, acceptance, security, or contradiction questions can still change those implementation details.
-7. Do not ask questions about details that can be safely inferred without changing later decisions.
-8. Write every meaningful remaining question to `refinement.md` in the same directory as the primary document.
-9. Include 2 to 5 concrete answer options for each question.
-10. Include an empty `Answer:` field for each question.
-11. Write `- None` under `Supporting documents:` when no supporting documents were provided.
-12. Preserve existing unanswered questions and unprocessed answers in `refinement.md` when updating an existing refinement file.
-13. Tell the user to answer the `Answer:` fields in `refinement.md` and invoke the skill again after answering.
+6. Do not ask implementation-detail questions whose answers would likely be invalidated by unresolved business, scope, acceptance, security, or contradiction questions.
+7. Ask implementation-independent or conditionally phrased implementation questions when they can reduce a later refinement pass.
+8. If a useful follow-up depends on a current question, include it as a conditional question when it can be answered safely.
+9. Before writing `refinement.md`, review the candidate questions for likely follow-ups and add follow-ups that can be asked now without knowing the actual answer.
+10. Defer a question only when it cannot be phrased conditionally and depends on a specific answer that is not yet known.
+11. Do not ask questions about details that can be safely inferred without changing later decisions.
+12. Write every meaningful remaining question to `refinement.md` in the same directory as the primary document.
+13. Include 2 to 5 concrete answer options for each question.
+14. Include an empty `Answer:` field for each question.
+15. Write `- None` under `Supporting documents:` when no supporting documents were provided.
+16. Preserve existing unanswered questions and unprocessed answers in `refinement.md` when updating an existing refinement file.
+17. Tell the user to answer the `Answer:` fields in `refinement.md` and invoke the skill again after answering.
 
 ## Process answered refinement process
 
