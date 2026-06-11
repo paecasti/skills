@@ -2,7 +2,7 @@
 
 ## What this produces
 
-A sequential PR execution plan under `<flow-folder>/plan/` with `PLAN.md`, PR folders, PR READMEs, and atomic task files.
+A sequential PR execution plan under `<flow-folder>/plan/` with `PLAN.md`, one `context.md` per PR, and one executable `tasks.md` per PR.
 
 ## Planning process
 
@@ -25,40 +25,36 @@ A sequential PR execution plan under `<flow-folder>/plan/` with `PLAN.md`, PR fo
 <flow-folder>/plan/
   PLAN.md
   pr-1-<slug>/
-    README.md
-    task-01-<slug>.md
-    task-02-<slug>.md
+    context.md
+    tasks.md
   pr-2-<slug>/
-    README.md
-    task-01-<slug>.md
+    context.md
+    tasks.md
 ```
 
 10. Include in `PLAN.md`:
 - Overall objective.
 - Folder, filename, and numbering conventions.
-- Ordered PR map with objective, risk, and relative complexity.
-- Execution rules for the implementing agent.
+- Ordered PR map with objective, related acceptance criteria IDs, risk, and relative complexity.
+- Human-facing execution rules for orchestrating PR implementation.
 - Validation commands between PRs, adapted to the project stack.
+- General `Do not`.
 
-11. Include in each PR `README.md`:
+11. Include in each PR `context.md`:
 - PR objective.
-- Preconditions.
-- Frozen decisions, when applicable.
-- Ordered task list with relative task complexity.
-- Acceptance criteria.
-- `No hacer`.
-
-12. Include in each `task-NN-<slug>.md`:
-- Clear atomic title.
-- Minimal context.
+- Minimal background the implementing agent needs before executing tasks.
 - Preconditions, when applicable.
+- Frozen decisions, when applicable.
+- Practical risks, when applicable.
+- All execution boundaries the implementing agent must know for this PR, including any general boundaries from `PLAN.md` that affect execution.
+- Human review guidance: expected final outcome, PR-level validation when available, and manual review focus.
+
+12. Include in each PR `tasks.md`:
+- Ordered atomic task sections.
 - Files to read, create, and modify.
 - Concrete sequential verifiable steps.
-- TDD instructions when the task creates or changes testable logic.
-- Relative complexity: `S`, `M`, or `L`.
-- Verifiable milestone.
-- Done criterion.
-- `No hacer`.
+- `Check`: the concrete command, compile/build step, startup sanity check, or manual task-level check to run after the task.
+- Task-specific `Do not`, only when narrower than the PR boundaries in `context.md`.
 
 13. Review numbering, filenames, internal references, and PR order before ending.
 14. Return a summary with the generated folder, number of PRs, total task count, and important assumptions.
@@ -74,18 +70,23 @@ A sequential PR execution plan under `<flow-folder>/plan/` with `PLAN.md`, PR fo
 **Output:**
 - Write real files under `<flow-folder>/plan/`; do not only answer in chat.
 - Do not invent an additional parent folder under `plan/`.
-- Use Markdown and kebab-case filenames.
+- Use Markdown, kebab-case PR folder names, and lowercase `context.md` and `tasks.md` filenames.
+- Do not create `README.md` files for PR context.
+- Do not create one Markdown file per task.
 - Do not add empty sections.
 
 **Planning:**
-- Do not create implementation code.
+- Do not modify or create implementation files in the target codebase; write only files under `<flow-folder>/plan/`.
 - Do not create broad tasks that require design decisions from the executor.
 - Preserve existing behavior unless the proposal explicitly asks for a bugfix or functional change.
+- Make each PR folder executable from only its `context.md` and `tasks.md`.
 - Document non-blocking assumptions briefly in the relevant plan file.
 - Ask before writing files when an ambiguity blocks task decomposition.
 
 **Tasks:**
-- Each task must have a verifiable milestone independent of later tasks.
-- Include TDD when a task creates or modifies testable logic.
-- Omit TDD only for pure infrastructure or configuration tasks and say so explicitly.
-- Split a task when it touches too many responsibilities.
+- Keep acceptance criteria IDs in `PLAN.md`; do not repeat them in `context.md` or task sections.
+- Keep `tasks.md` operational: files, steps, task-level check, and task-specific boundaries.
+- Use short illustrative snippets in `tasks.md` only when they remove implementation ambiguity.
+- Do not add `Done when`, `Done criterion`, or milestone sections to tasks.
+- If no useful task-level check exists, write `Check: covered by PR final review`.
+- Split a PR when `tasks.md` mixes unrelated responsibilities.
