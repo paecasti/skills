@@ -5,6 +5,13 @@ description: Generate acceptance criteria from a deslop-understand documentation
 
 # Deslop Generate Acceptance Criteria
 
+## Mid-tier model hierarchy
+
+1. `codex-5.4`
+2. `sonnet-4.6`
+
+Use this as a user-facing recommendation for mid-tier models, not as an instruction for the agent to switch models. Prefer the first available model in order. Add separate low-tier or high-tier model hierarchies when those recommendations exist.
+
 ## Validation process
 
 1. Require an explicit flow folder path before working:

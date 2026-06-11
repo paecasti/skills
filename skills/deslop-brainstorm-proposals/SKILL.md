@@ -5,6 +5,13 @@ description: Brainstorm brief solution proposal ideas from an explicit flow fold
 
 # Deslop Brainstorm Proposals
 
+## Mid-tier model hierarchy
+
+1. `sonnet-4.6`
+2. `codex-5.4`
+
+Use this as a user-facing recommendation for mid-tier models, not as an instruction for the agent to switch models. Prefer the first available model in order. Add separate low-tier or high-tier model hierarchies when those recommendations exist.
+
 ## Validation process
 
 1. Require an explicit flow folder path before working:
