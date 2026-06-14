@@ -10,7 +10,7 @@ description: Create one decision-ready proposal from an explicit flow folder aft
 1. `codex-5.4`
 2. `sonnet-4.6`
 
-Use this as a user-facing recommendation for mid-tier models, not as an instruction for the agent to switch models. Prefer the first available model in order. Add separate low-tier or high-tier model hierarchies when those recommendations exist.
+Use the first available model in the recommended mid-tier hierarchy, and define separate hierarchies for other tiers when available.
 
 ## Validation process
 
@@ -30,4 +30,11 @@ Use this as a user-facing recommendation for mid-tier models, not as an instruct
 ```
 
 6. If documentation is not in context and `documentation.md` is missing, tell the user to run `$deslop-understand` for the flow folder first and stop.
-7. If validation passes, read `references/body.md` and follow it.
+7. Require acceptance criteria from current context or this file:
+
+```txt
+<flow-folder>/docs/acceptance-criteria.md
+```
+
+8. If acceptance criteria are not in context and `acceptance-criteria.md` is missing, tell the user to review `documentation.md`, run `$deslop-generate-acceptance-criteria`, and stop.
+9. If validation passes, read `references/body.md` and follow it.

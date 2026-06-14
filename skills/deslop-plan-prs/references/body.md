@@ -36,9 +36,6 @@ A sequential PR execution plan under `<flow-folder>/plan/` with `PLAN.md`, one `
 - Overall objective.
 - Folder, filename, and numbering conventions.
 - Ordered PR map with objective, related acceptance criteria IDs, risk, and relative complexity.
-- Human-facing execution rules for orchestrating PR implementation.
-- Validation commands between PRs, adapted to the project stack.
-- General `Do not`.
 
 11. Include in each PR `context.md`:
 - PR objective.

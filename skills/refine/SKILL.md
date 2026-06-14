@@ -10,7 +10,7 @@ description: Generate or process a local refinement.md for a primary document an
 1. `sonnet-4.6`
 2. `codex-5.4`
 
-Use this as a user-facing recommendation for mid-tier models, not as an instruction for the agent to switch models. Prefer the first available model in order. Add separate low-tier or high-tier model hierarchies when those recommendations exist.
+Use the first available model in the recommended mid-tier hierarchy, and define separate hierarchies for other tiers when available.
 
 ## Validation process
 

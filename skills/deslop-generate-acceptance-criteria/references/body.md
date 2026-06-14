@@ -35,9 +35,9 @@ Then <observable result>
 
 5. Number criteria sequentially as `AC-001`, `AC-002`, `AC-003`.
 6. Keep each criterion independently testable by a human, automated test, or review checklist.
-7. Return a completion summary that names `acceptance-criteria.md`.
-8. Suggest running `$deslop-propose` to create one decision-ready proposal.
-9. Suggest running `$deslop-brainstorm-proposals` when the user wants several lightweight solution options before choosing a proposal.
+7. Return a completion summary that names `<flow-folder>/docs/acceptance-criteria.md`.
+8. Tell the user to review `acceptance-criteria.md`.
+9. Tell the user to run `$deslop-propose` or `$deslop-brainstorm-proposals` only after they consider `acceptance-criteria.md` correct.
 
 ## Gotcha list
 
@@ -56,4 +56,4 @@ Then <observable result>
 
 **Output:**
 - Include `Out of Scope` when `documentation.md` states exclusions or non-goals.
-- Point the user to `$deslop-propose` and `$deslop-brainstorm-proposals` as valid next Deslop skills after acceptance criteria are complete.
+- Point the user to review `acceptance-criteria.md` before running `$deslop-propose` or `$deslop-brainstorm-proposals`.

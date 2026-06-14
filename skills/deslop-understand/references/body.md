@@ -22,7 +22,7 @@ A concise understanding dossier in `<flow-folder>/docs/` derived from user-provi
 
 5. Return a completion summary to the user that lists the documents created or updated.
 6. If the user wants to refine the documented understanding, suggest running `$refine` with `documentation.md`.
-7. Suggest running `$deslop-generate-acceptance-criteria` for the same flow folder after the documentation is ready.
+7. Tell the user to review `documentation.md` first and run `$deslop-generate-acceptance-criteria` for the same flow folder only after they consider the documentation correct.
 
 ## Gotcha list
 
@@ -42,4 +42,4 @@ A concise understanding dossier in `<flow-folder>/docs/` derived from user-provi
 **Output:**
 - Keep `documentation.md` useful for a later proposal without repeating the same investigation.
 - Always return a short summary of created or updated files before ending.
-- Point the user to `$deslop-generate-acceptance-criteria` as the next Deslop skill after understanding is complete.
+- Point the user to review `documentation.md` before running `$deslop-generate-acceptance-criteria`.

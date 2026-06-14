@@ -2,12 +2,12 @@
 
 ## What this produces
 
-A lightweight proposal brainstorm at `<flow-folder>/proposals/brainstorm-proposals.md` with multiple brief solution ideas and metrics.
+A lightweight proposal brainstorm at `<flow-folder>/proposals/brainstorm-proposals.md` with multiple brief solution ideas grounded in documentation, acceptance criteria, and metrics.
 
 ## Analysis process
 
 1. Use `documentation.md` content from context when already available; otherwise read the file.
-2. Use acceptance criteria from context when already available; otherwise read this optional file only when present:
+2. Use acceptance criteria from context when already available; otherwise read the file:
 
 ```txt
 <flow-folder>/docs/acceptance-criteria.md
@@ -51,9 +51,10 @@ A lightweight proposal brainstorm at `<flow-folder>/proposals/brainstorm-proposa
 **Input:**
 - Do not use the `background/` folder to brainstorm proposals.
 - Do not continue when documentation is neither in context nor available in `documentation.md`.
+- Do not continue when acceptance criteria are neither in context nor available in `acceptance-criteria.md`.
 - Do not read `documentation.md` before the validation process passes.
 - Do not read `documentation.md` or `acceptance-criteria.md` when their contents are already available in current context.
-- Use `acceptance-criteria.md` as decision input when it exists.
+- Use `acceptance-criteria.md` as required decision input.
 
 **Brainstorm:**
 - Do not create full proposal files for each idea.

@@ -2,12 +2,12 @@
 
 ## What this produces
 
-One decision-ready proposal at `<flow-folder>/proposals/proposal-<idea>.md` derived from the flow documentation and aligned with any user-provided direction.
+One decision-ready proposal at `<flow-folder>/proposals/proposal-<idea>.md` derived from the flow documentation, acceptance criteria, and any user-provided direction.
 
 ## Analysis process
 
 1. Use `documentation.md` content from context when already available; otherwise read the file.
-2. Use acceptance criteria from context when already available; otherwise read this optional file only when present:
+2. Use acceptance criteria from context when already available; otherwise read the file:
 
 ```txt
 <flow-folder>/docs/acceptance-criteria.md
@@ -45,7 +45,8 @@ One decision-ready proposal at `<flow-folder>/proposals/proposal-<idea>.md` deri
 **Input:**
 - Do not use the `background/` folder to create the proposal.
 - Do not read `documentation.md`, `acceptance-criteria.md`, or existing proposal files when their contents are already available in current context.
-- Use `acceptance-criteria.md` as decision input when it exists.
+- Do not continue when acceptance criteria are neither in context nor available in `acceptance-criteria.md`.
+- Use `acceptance-criteria.md` as required decision input.
 - Treat user-provided proposal direction as binding unless it conflicts with documented requirements.
 
 **Proposal:**
