@@ -20,6 +20,38 @@ Recommended structure:
   plan/
 ```
 
+Skill summary:
+
+- `$deslop-understand`: Reads background/ and produces `docs/documentation.md`.
+- `$deslop-generate-acceptance-criteria`: Turns the documentation into concrete acceptance criteria.
+- `$deslop-brainstorm-proposals`: Generates several brief solution directions for comparison.
+- `$deslop-propose`: Creates one decision-ready proposal under `proposals/`.
+- `$deslop-plan-prs`: Converts a proposal into a PR-by-PR execution plan.
+- `$deslop-verify-implementation`: Checks a completed implementation against the proposal, documentation, and acceptance criteria.
+
+Workflow diagram:
+
+```mermaid
+flowchart TD
+    A["Create flow folder<br/>./flows-container/flow-name/"]
+    B["Add context<br/>background/"]
+    C["$deslop-understand"]
+    D["Refine<br/>docs/documentation.md"]
+    E["$deslop-generate-acceptance-criteria"]
+    F["Refine<br/>docs/acceptance-criteria.md"]
+    G{"Need multiple<br/>solution ideas?"}
+    H["$deslop-brainstorm-proposals"]
+    I["$deslop-propose<br/>'idea'"]
+    J["$deslop-plan-prs<br/>'proposal'"]
+    K["Implement plan"]
+    L["$deslop-verify-implementation"]
+
+    A --> B --> C --> D --> E --> F --> G
+    G -- "Yes" --> H --> I
+    G -- "No" --> I
+    I --> J --> K --> L
+```
+
 Typical usage:
 
 1. Create a flow folder, for example `flows/improve-onboarding/`.
@@ -33,5 +65,5 @@ Typical usage:
 9. Implement by following the generated plan; no specific skill is required for this stage.
 10. Use `$deslop-verify-implementation <flow-folder>` to verify a completed implementation against the proposal, documentation, and acceptance criteria.
 
-The `<flow-folder>` argument should always be the flow folder, not necessarily the project root.
+
 ````
