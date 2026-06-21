@@ -5,13 +5,6 @@ description: Generate or process a local refinement.md for a primary document an
 
 # Refine
 
-## Mid-tier model hierarchy
-
-1. `sonnet-4.6`
-2. `codex-5.4`
-
-Use the first available model in the recommended mid-tier hierarchy, and define separate hierarchies for other tiers when available.
-
 ## Validation process
 
 1. Require an explicit primary document path before working.
