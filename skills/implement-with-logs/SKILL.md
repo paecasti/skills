@@ -1,9 +1,9 @@
 ---
-name: implement-plan
+name: implement-with-logs
 description: Implement an existing plan while appending contradictions, undefined points, assumptions, and blockers to an execution log. Use when the user asks to implement a plan with lightweight append-only logging.
 ---
 
-# Implement Plan
+# Implement With Logs
 
 ## Validation
 
