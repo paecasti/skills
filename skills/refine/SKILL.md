@@ -1,17 +1,16 @@
 ---
 name: refine
-description: Generate or process a local refinement.md for a primary document and record answered refinements in that document. Use only when explicitly invoked as $refine with a primary document path.
+description: Generate or process a staged refinement.md for provided documentation by asking about business requirements and contradictions, strategic architecture, then detailed tactical design. Use only when explicitly invoked as $refine with a primary document path. Work on one level per run and record answered refinements in the primary document.
 ---
 
 # Refine
 
-## Validation process
+## Validation
 
-1. Require an explicit primary document path before working.
+1. Require an explicit primary document path.
 2. Accept optional supporting document paths after the primary path.
-3. Confirm the primary document exists.
-4. Confirm each supporting document exists before using it.
-5. Resolve the refinement file path as `refinement.md` in the same directory as the primary document.
-6. If the user says the refinement was answered, completed, filled, ready to process, or asks to process without new questions, require the refinement file to exist and confirm the primary document is writable.
-7. If the user does not say the refinement was answered, confirm the primary document directory is writable.
-8. If validation passes, read `references/body.md` and follow it.
+3. Confirm every provided document exists and is readable.
+4. Resolve `refinement.md` in the primary document directory.
+5. When processing answers, require `refinement.md` to exist and the primary document to be writable.
+6. When generating or updating questions, require the primary document directory to be writable.
+7. If any check fails, stop and report every failure; otherwise read `references/body.md` and follow it.
